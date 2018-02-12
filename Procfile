@@ -1,2 +1,1 @@
-web: gunicorn gettingstarted.wsgi
-run: python cointickerbot.py
+run: python3 cointickerbot.py
