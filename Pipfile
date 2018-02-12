@@ -9,8 +9,6 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
-websocket = "*"
-websocket-client = "*"
 
 
 [requires]
