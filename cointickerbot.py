@@ -24,12 +24,9 @@ def on_message(ws, message):
         return
 
     currency = message["text"].split()
-    
-
     if len(currency) < 2:
         return
 
-    
     mult = currency[2] if len(currency) > 2 else None
     currency = currency[1]
     for coin_symbol, coin_nick in currency_term.items():
@@ -45,9 +42,8 @@ def on_message(ws, message):
     if last:
         time_stamp = datetime.fromtimestamp(int(response_dict.get('timestamp')))
         return_message = "{} 기준 가격 *KRW {:,}*".format(time_stamp.strftime('%Y-%m-%d %H:%M:%S'), int(last))
-        print(mult)
-        print(mult.isnumeric())
-    if mult.isnumeric():
+
+    if mult and mult.isnumeric():
         return_message += " {}개 *KRW {:,}*".format(mult, int(last) * int(mult))
 
     return_msg = {
