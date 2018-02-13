@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e05430b5c24e94cbdbef19294d741b5c59734ef72cce7b983f59befbb23d20e2"
+            "sha256": "c651655526c427e5e70b598475b48c66942ba34d5f0dd788f53413b8599e49fe"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -28,6 +28,13 @@
         ]
     },
     "default": {
+        "boto": {
+            "hashes": [
+                "sha256:13be844158d1bd80a94c972c806ec8381b9ea72035aa06123c5db6bc6a6f3ead",
+                "sha256:deb8925b734b109679e3de65856018996338758f4b916ff4fe7bb62b6d7000d1"
+            ],
+            "version": "==2.48.0"
+        },
         "dj-database-url": {
             "hashes": [
                 "sha256:e16d94c382ea0564c48038fa7fe8d9c890ef1ab1a8ec4cb48e732c124b9482fd",

@@ -11,6 +11,7 @@ gunicorn = "*"
 django-heroku = "*"
 websockets = "*"
 websocket-client = "*"
+boto = "*"
 
 
 [requires]
