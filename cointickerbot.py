@@ -1,7 +1,9 @@
+import os
 import requests
 import websocket
 import json
 from datetime import datetime
+from boto.s3.connection import S3Connection
 
 currency_term = {
     'btc': ['비트코인', '빗코', '비코', '비트'],
@@ -71,9 +73,16 @@ def on_message(ws, message):
     # 메시지 전송
     ws.send(json.dumps(return_msg))
 
-token_json = open("token.json").read()
-json_token_data = json.loads(token_json)
-token = json_token_data['token']
+# local용 토큰 (push시 주석처리하기)
+# token_json = open("token.json").read()
+# json_token_data = json.loads(token_json)
+# token = json_token_data['token']
+
+# Heroku용 토큰
+token = S3Connection(os.environ['SLACK_BOT_TOKEN'])
+
+print(token)
+
 get_url = requests.get('https://slack.com/api/rtm.connect?token=' + token)
 socket_endpoint = get_url.json()['url']
 
