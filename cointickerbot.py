@@ -79,7 +79,7 @@ def on_message(ws, message):
 # token = json_token_data['token']
 
 # Heroku용 토큰
-token = S3Connection(os.environ['SLACK_BOT_TOKEN'])
+token = os.environ['SLACK_BOT_TOKEN']
 
 print(token)
 
