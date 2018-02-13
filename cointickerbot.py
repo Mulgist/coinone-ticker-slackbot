@@ -71,7 +71,9 @@ def on_message(ws, message):
     # 메시지 전송
     ws.send(json.dumps(return_msg))
 
-token = 'xoxb-313486660738-9LIyL7qpxeBBemsxXsWpeXfM'
+token_json = open("token.json").read()
+json_token_data = json.loads(token_json)
+token = json_token_data['token']
 get_url = requests.get('https://slack.com/api/rtm.connect?token=' + token)
 socket_endpoint = get_url.json()['url']
 
