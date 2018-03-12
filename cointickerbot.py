@@ -71,18 +71,3 @@ def on_message(ws, message):
 
     # 메시지 전송
     ws.send(json.dumps(return_msg))
-
-# local용 토큰 (push시 주석처리하기)
-# token_json = open("token.json").read()
-# json_token_data = json.loads(token_json)
-# token = json_token_data['token']
-
-# Heroku용 토큰
-token = os.environ['SLACK_BOT_TOKEN']
-
-get_url = requests.get('https://slack.com/api/rtm.connect?token=' + token)
-socket_endpoint = get_url.json()['url']
-
-websocket.enableTrace(True)
-ws = websocket.WebSocketApp(socket_endpoint, on_message=on_message)
-ws.run_forever()
